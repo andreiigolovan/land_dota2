@@ -1,0 +1,100 @@
+@import '_fonts.sass'
+
+// Common styles
+
+*
+  box-sizing: border-box
+body
+  padding: 0
+  margin: 0
+  font-family: 'Impact', sans-serif
+a
+  text-decoration: none
+li
+  list-style-type: none
+
+
+.page-main
+  height: 1080px
+  background-color: #000
+  &__wrapper
+    width: 95%
+    min-width: 710px
+    height: 100%
+    margin: 0 auto
+    padding: 20px
+    background-image: url(../img/vengeful_spirit_2.png), url(../img/Blue-smoke.png)
+    background-position: 100% 100%, 10% 125%
+    background-repeat: no-repeat, no-repeat
+  &__partner-logo
+    display: flex
+    justify-content: flex-end
+    padding-top: 30px
+    padding-right: 30px
+  &__container
+    margin: 70px 0 0 12%
+  &__btn
+    display: block
+    margin-top: 105px
+    margin-left: 25px
+    color: #fefefe
+    font-family: inherit
+    font-size: 62px
+    letter-spacing: -0.9px
+    text-transform: uppercase
+    text-shadow: 0 0 16px rgba(250, 250, 250, 0.35)
+    width: 660px
+    height: 190px
+    border-radius: 8px
+    border: none
+    box-shadow: -50px -5px 113px 13px #000000, 0 0 90px rgba(186, 207, 224, 0.45)
+    background-image: linear-gradient(to top, #29130e 0%, #ee766c 68%, #de3b24 100%)
+    &:hover
+      background-image: linear-gradient(to top, darken(#29130e, 6.25%) 0%, darken(#ee766c, 6.25%) 68%, darken(#de3b24, 6.25%) 100%) // one tone darker
+    &:active
+      background-image: linear-gradient(to top, darken(#29130e, 12.5%) 0%, darken(#ee766c, 12.5%) 68%, darken(#de3b24, 12.5%) 100%) // one tone 
+
+.preloader
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  background: #000
+  z-index: 2
+  transition: 1s all
+  opacity: 1
+  visibility: visible
+
+  .loader
+    width: 75px
+    height: 75px
+    border: 10px solid #fff
+    border-radius: 50%
+    border-top-color: red
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    animation: 1s spin infinite linear
+
+  &.done
+    opacity: 0
+    visibility: hidden
+
+@keyframes spin 
+  from 
+    transform: translate(-50%, -50%) rotate(0deg)
+  to
+    transform: translate(-50%, -50%) rotate(360deg)
+
+@media screen and (max-width: 1360px)
+  .page-main
+    &__wrapper
+      width: 100%
+      background-position: 90% 90%, 0 115%
+    &__container
+      margin: 100px auto
+      display: flex
+      justify-content: center
+      flex-wrap: wrap

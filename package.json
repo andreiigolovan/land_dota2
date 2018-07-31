@@ -1,0 +1,27 @@
+{
+  "name": "land_dota2",
+  "version": "1.0.0",
+  "description": "test_assignment",
+  "main": "dist/index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreiigolovan/land_dota2.git"
+  },
+  "author": "andreiigolovan@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreiigolovan/land_dota2/issues"
+  },
+  "homepage": "https://github.com/andreiigolovan/land_dota2#readme"
+}
