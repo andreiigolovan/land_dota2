@@ -1,100 +1,267 @@
-@import '_fonts.sass'
-
 // Common styles
 
 *
   box-sizing: border-box
-body
-  padding: 0
-  margin: 0
-  font-family: 'Impact', sans-serif
 a
   text-decoration: none
 li
   list-style-type: none
 
-
-.page-main
-  height: 1080px
-  background-color: #000
-  &__wrapper
-    width: 95%
-    min-width: 710px
-    height: 100%
-    margin: 0 auto
-    padding: 20px
-    background-image: url(../img/vengeful_spirit_2.png), url(../img/Blue-smoke.png)
-    background-position: 100% 100%, 10% 125%
-    background-repeat: no-repeat, no-repeat
-  &__partner-logo
-    display: flex
-    justify-content: flex-end
-    padding-top: 30px
-    padding-right: 30px
-  &__container
-    margin: 70px 0 0 12%
-  &__btn
-    display: block
-    margin-top: 105px
-    margin-left: 25px
-    color: #fefefe
-    font-family: inherit
-    font-size: 62px
-    letter-spacing: -0.9px
-    text-transform: uppercase
-    text-shadow: 0 0 16px rgba(250, 250, 250, 0.35)
-    width: 660px
-    height: 190px
-    border-radius: 8px
-    border: none
-    box-shadow: -50px -5px 113px 13px #000000, 0 0 90px rgba(186, 207, 224, 0.45)
-    background-image: linear-gradient(to top, #29130e 0%, #ee766c 68%, #de3b24 100%)
-    &:hover
-      background-image: linear-gradient(to top, darken(#29130e, 6.25%) 0%, darken(#ee766c, 6.25%) 68%, darken(#de3b24, 6.25%) 100%) // one tone darker
-    &:active
-      background-image: linear-gradient(to top, darken(#29130e, 12.5%) 0%, darken(#ee766c, 12.5%) 68%, darken(#de3b24, 12.5%) 100%) // one tone 
-
-.preloader
-  position: fixed
-  left: 0
-  top: 0
-  width: 100%
+body
+  padding: 40px 50px
+  margin: 0
+  font-family: 'Open Sans', sans-serif
   height: 100%
-  background: #000
-  z-index: 2
-  transition: 1s all
-  opacity: 1
-  visibility: visible
-
-  .loader
-    width: 75px
-    height: 75px
-    border: 10px solid #fff
-    border-radius: 50%
-    border-top-color: red
+  width: 100%
+  background-color: #000
+  &::after
+    content: ""
+    display: block
     position: absolute
-    left: 50%
-    top: 50%
-    transform: translate(-50%, -50%)
-    animation: 1s spin infinite linear
+    top: 0
+    left: 0
+    background: #000 url(../img/bg.jpg) center top no-repeat
+    width: 100%
+    height: 100%
+    z-index: -1
+    filter: brightness(0.6) 
 
-  &.done
-    opacity: 0
-    visibility: hidden
+.page-wrapper
+  color: #fff
+  margin: 0 auto
+  font-weight: 400
 
-@keyframes spin 
-  from 
-    transform: translate(-50%, -50%) rotate(0deg)
-  to
-    transform: translate(-50%, -50%) rotate(360deg)
+.header
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  font-size: 50px
+  line-height: 40px
+  margin-bottom: 20px
+  &__bonus
+    color: #fff
+    margin-left: 25px
+    text-transform: uppercase
+    &_bold
+      font-weight: 800
+
+.main
+  &__title-date
+    font-size: 34px
+    font-weight: 700
+    text-align: center
+    text-transform: uppercase
+    margin-bottom: 30px
+  &__teams
+    max-width: 1400px
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+    margin-bottom: 30px
+  &__team1, &__team2
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+  &__team-wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+  &__versus
+    font-size: 42px
+    font-weight: 700
+    text-transform: uppercase
+    margin: 10px 0
+    width: 120px
+    height: 120px
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 2px solid #aaa
+    border-radius: 50%
+
+.team1, .team2
+  &__score
+    font-size: 106px
+    color: #fcc70a
+    font-weight: 800
+    line-height: 85px
+  &__name
+    max-width: 220px
+    font-size: 40px
+    color: #fff
+    font-weight: 700
+    text-transform: uppercase
+    line-height: 45px
+  &__logo
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 255px
+    width: 255px
+    opacity: 0.8
+    background-color: #fff
+    border-radius: 50%
+    box-shadow: 0 0 77px 25px rgba(236, 233, 231, 0.59), inset 0 0 60px #bbb
+
+.team1
+  &__logo
+    margin-left: 20px
+.team2
+  &__logo
+    margin-right: 20px
+
+.btn
+  &-container
+    text-align: center
+    max-width: 320px
+    margin: 0 auto
+  &__take-bet
+    font: inherit
+    font-weight: 800
+    color: #fff
+    font-size: 26px
+    text-transform: uppercase
+    cursor: pointer
+    display: block
+    padding: 20px 30px
+    margin: 0 auto
+    margin-bottom: 10px
+    background-color: #fcc70a
+    border: none
+    border-radius: 10px
+    box-shadow: 0 0 57px 15px rgba(121, 135, 49, 0.43)
+    &:hover
+      background-color: darken(#fcc70a, 6.5%)
+      
+  &__get-bonus
+    color: #fff
+    font-size: 22px
+    text-transform: uppercase
+    text-decoration: underline
+
+.footer
+  text-transform: uppercase
+  &__wrapper1
+    max-width: 100%
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    margin-bottom: 50px
+  &__wrapper2
+    max-width: 100%
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+  &__card
+    display: flex
+    flex-direction: column
+    margin-right: 30px
+    &:first-of-type
+      margin-top: -10px
+    &:last-of-type
+      margin-right: 0
+
+.card
+  &__score
+    display: flex
+    align-items: center
+    min-width: 330px
+    max-width: 500px
+    &_left, &_right
+      display: flex
+      flex-direction: column
+      align-items: center
+    &_left1, &_right1
+      color: #228652
+      font-size: 47px
+      font-weight: 800
+    &_left2, &_right2
+      color: #000
+      font-size: 20px
+      font-weight: 800
+      text-align: center
+      text-shadow: 0 0 40px #fff
+  &__title
+    text-align: center
+    margin-top: 10px
+    font-size: 16px
+    font-weight: 700
+
+.chicken, .aegis
+  margin: 0 30px
+
+.footer__card_chicken
+  margin-top: 20px
+
+.card__title_roshan, .card__title_death
+  margin-top: -10px
+
 
 @media screen and (max-width: 1360px)
-  .page-main
-    &__wrapper
-      width: 100%
-      background-position: 90% 90%, 0 115%
-    &__container
-      margin: 100px auto
+  body
+    padding: 20px 25px
+
+
+@media screen and (max-width: 1190px)
+  .main
+    &__teams
+      max-width: 780px
+    &__team1, &__team2
       display: flex
+      flex-direction: column
+  .footer  
+    &__wrapper1, &__wrapper2
       justify-content: center
-      flex-wrap: wrap
+
+
+@media screen and (max-width: 800px)
+  .header
+    &__bonus
+      font-size: 42px
+
+
+@media screen and (max-width: 740px)
+  .header
+    justify-content: center
+    &__logo
+      margin-bottom: 20px
+  .main
+    &__teams
+      justify-content: center
+      flex-direction: column
+    &__team1, &__team2
+      flex-direction: row
+
+
+@media screen and (max-width: 600px)
+  .main
+    &__team1, &__team2
+      flex-direction: column
+  .team1, .team2
+    &__logo
+      margin: 0
+  .btn-container
+    margin-bottom: 20px
+
+@media screen and (max-width: 410px)
+  .header
+    &__logo_img
+      height: 70%
+    &__bonus
+      font-size: 32px
+  .main 
+    &__title-date
+      font-size: 24px
+  .card
+    &__score
+      flex-direction: column
+  .footer
+    &__card
+      margin-bottom: 20px
